@@ -1,5 +1,12 @@
 #include "i2c_bus.h"
+
+#include <stdio.h>
+#include <esp_log.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+
 #include "driver/i2c.h"
+#include "sdkconfig.h"
 
 #define I2C_MASTER_TX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
@@ -15,7 +22,7 @@ static i2c_port_t i2c_port = I2C_NUM_0;
 static gpio_num_t i2c_gpio_sda = 8;
 static gpio_num_t i2c_gpio_scl = 18;
 
-static const char TAG[] = "I2CBus";
+// static const char TAG[] = "I2CBus";
 
 
 static esp_err_t i2c_master_driver_initialize(void) {
@@ -59,4 +66,10 @@ void i2c_bus_scan() {
     }
 
     i2c_driver_delete(i2c_port);
+}
+
+void i2c_bus_init() {
+#if CONFIG_SCAN_I2C_BUS_ON_STARTUP
+    i2c_bus_scan();
+#endif
 }

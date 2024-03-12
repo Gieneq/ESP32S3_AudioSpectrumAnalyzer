@@ -6,6 +6,12 @@ menu "I2C Bus"
         help
             During startup scan I2C bus to show visible slaves.
 
+        config SHOULD_DO_STH
+            bool "SSHOULD_DO_STHus"
+            default y
+            help
+                SHOULD_DO_STHes.
+
     choice EXAMPLE_LCD_CONTROLLER
         prompt "LCD controller model"
         default EXAMPLE_LCD_CONTROLLER_ILI9341

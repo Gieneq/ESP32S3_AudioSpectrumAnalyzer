@@ -15,7 +15,10 @@
     "idf.toolsPathWin": "C:\\Espressif",
     "files.associations": {
         "stdio.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "esp_config.h": "c",
+        "esp_log.h": "c",
+        "sdkconfig.h": "c"
     },
     "idf.flashType": "UART"
 }

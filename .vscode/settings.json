@@ -18,7 +18,16 @@
         "freertos.h": "c",
         "esp_config.h": "c",
         "esp_log.h": "c",
-        "sdkconfig.h": "c"
+        "sdkconfig.h": "c",
+        "esp-bsp.h": "c",
+        "esp-box-lite.h": "c",
+        "i2c_bus.h": "c",
+        "i2c_bus_scan.h": "c",
+        "gpio.h": "c",
+        "esp_codec_dev_defaults.h": "c",
+        "display.h": "c",
+        "esp_err.h": "c",
+        "settings.h": "c"
     },
     "idf.flashType": "UART"
 }
